@@ -9,9 +9,7 @@ language:
 # Dataset Card of RealHiTBench
 
 <p align="left">
-    <a href="">📖Paper</a>
-    <br>
-    <a href="https://github.com/cspzyy/RealHiTBench">⌨️Code</a>
+    <a href="">📖Paper</a>  <a href="https://github.com/cspzyy/RealHiTBench">⌨️Code</a>
 </p>
 
 
