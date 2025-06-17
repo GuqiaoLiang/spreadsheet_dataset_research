@@ -9,7 +9,7 @@ language:
 # Dataset Card of RealHiTBench
 
 <p align="left">
-    <a href="">📖Paper</a>  <a href="https://github.com/cspzyy/RealHiTBench">⌨️Code</a>
+    <a href="https://arxiv.org/abs/2506.13405">📖Paper</a>  <a href="https://github.com/cspzyy/RealHiTBench">⌨️Code</a>
 </p>
 
 
@@ -76,3 +76,17 @@ To better align with real-world applications, the data are collected from multip
 - RealHiTBench can conduct a comprehensive and challenging evaluation of your model's ability to understand hierarchical tables, whether it is a language or a multimodal model.
 - We recommend using *LaTeX*-formatted tables as text-based inputs in experiments due to their comprehensive presentation. Anyway, we also provide other textual formats for your potential use.
 - Due to the model's input length restrictions, we've separated some overly large tables and their QA from the original data and haven't included them in the evaluation for now. Similarly, we've retained them in the dataset for your potential use.
+
+## Citation
+If you find RealHiTBench is useful in your work, please consider citing the paper:
+```bibtext
+@misc{wu2025realhitbenchcomprehensiverealistichierarchical,
+      title={RealHiTBench: A Comprehensive Realistic Hierarchical Table Benchmark for Evaluating LLM-Based Table Analysis}, 
+      author={Pengzuo Wu and Yuhang Yang and Guangcheng Zhu and Chao Ye and Hong Gu and Xu Lu and Ruixuan Xiao and Bowen Bao and Yijing He and Liangyu Zha and Wentao Ye and Junbo Zhao and Haobo Wang},
+      year={2025},
+      eprint={2506.13405},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2506.13405}, 
+}
+```
