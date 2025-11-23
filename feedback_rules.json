@@ -1,0 +1,284 @@
+[
+  {
+    "rule_id": "merge_conflict",
+    "description": "Merging multiple tables may involve inconsistent or missing values.",
+    "keywords": ["merge", "join", "combine", "overlap", "multiple files", "two tables"],
+    "feedback": [
+      "When merging tables, how should inconsistent or missing values be handled—ignored, filled, or resolved by priority?",
+      "Some fields differ across the two spreadsheets. Should the agent treat mismatched fields as equivalent?",
+      "If a column exists only in one of the files, should it be added to the final merged table with empty values?",
+      "How should I handle rows that do not align exactly during merging—should they be skipped or included with blank fields?"
+    ]
+  },
+  {
+    "rule_id": "missing_data",
+    "description": "Missing or null values appear in the dataset.",
+    "keywords": ["missing", "null", "na", "empty", "gap", "incomplete"],
+    "feedback": [
+      "I found missing values in the dataset—should they be ignored, filled with zero, or interpolated?",
+      "How should missing entries be treated? For example, should blank cells be considered zero or excluded?",
+      "Some years appear to have incomplete records. Should the agent estimate missing values?",
+      "Should NULL values be treated as genuine missing points or as zero for the purpose of calculation?"
+    ]
+  },
+  {
+    "rule_id": "inconsistent_labels",
+    "description": "Column or label names may not match exactly.",
+    "keywords": ["category", "label", "name", "translate", "mapping", "inconsistent"],
+    "feedback": [
+      "Some labels appear inconsistent. Should equivalent labels be standardized before analysis?",
+      "There may be slight variations in field names. Should similar labels be treated as the same category?",
+      "Do you want the agent to automatically normalize inconsistent names, such as spacing or capitalization differences?",
+      "If two labels differ only slightly, should they be merged or kept separate?"
+    ]
+  },
+  {
+    "rule_id": "time_series",
+    "description": "Time-based analysis involving years or dates.",
+    "keywords":[ "trend", "time series", "over time", "year-over-year", "YoY", "forecast", "projection", "growth rate"],
+    "feedback": [
+      "If certain years are missing, should I interpolate or only use the available years?",
+      "How should the agent treat gaps in the timeline—assume continuity or treat missing years as meaningful?",
+      "The dataset may skip some years. Should missing time periods be estimated or ignored?",
+      "Do you want the trend calculated strictly on continuous years, or on all available rows regardless of gaps?"
+    ]
+  },
+  {
+    "rule_id": "business_metric_definition",
+    "description": "Business metrics have multiple possible formulas.",
+    "keywords": ["ratio", "efficiency", "utilisation", "utilization", "cost", "estimate"],
+    "feedback": [
+      "This metric can be defined in multiple ways. Which formula should I use for the calculation?",
+      "Should the agent adopt a standard business formula or follow a custom calculation?",
+      "Some metrics (e.g., efficiency ratios) vary across industries. Which definition should be applied here?",
+      "Do you want the agent to include adjustments or special cases in the calculation?"
+    ]
+  },
+  {
+    "rule_id": "statistical_assumptions",
+    "description": "Statistical models require assumptions about variable encoding.",
+    "keywords": ["correlation", "regression", "coefficient", "pearson", "linear model"],
+    "feedback": [
+      "For statistical analysis, should categorical fields be encoded as numeric values?",
+      "Should outliers be included when computing statistical correlations?",
+      "Do you want the correlation computed on raw numbers or percentage-based values?",
+      "Should the analysis standardize numeric fields before computing coefficients?"
+    ]
+  },
+  {
+    "rule_id": "chart_options_basic",
+    "description": "Basic chart generation needs clarification.",
+    "keywords": ["chart", "plot", "bar chart", "line chart", "scatter"],
+    "feedback": [
+      "Would you like the chart to include axis labels, gridlines, or color distinctions?",
+      "Should values be rounded or formatted before being plotted?",
+      "Do you want the chart to highlight specific points or just visualize the trend?",
+      "Should the chart include a legend even if only two series are shown?"
+    ]
+  },
+  {
+    "rule_id": "group_missing_label",
+    "description": "Grouping requires rules for missing categories.",
+    "keywords": ["group", "continent", "region", "type", "category"],
+    "feedback": [
+      "Some rows lack a clear category label. Should missing groups be classified as 'Unknown'?",
+      "If a row has no group value, should it be excluded or assigned a default label?",
+      "Do you want the agent to infer missing group labels based on similar entries?",
+      "Should inconsistent or blank group categories be merged or treated separately?"
+    ]
+  },
+  {
+    "rule_id": "forecast_method",
+    "description": "Forecast tasks require a method to be chosen.",
+    "keywords": ["predict", "forecast", "future", "estimate trend"],
+    "feedback": [
+      "Which forecasting method should be used—linear regression or average yearly growth?",
+      "Should predictions be based only on recent years or the full dataset?",
+      "Do you want the forecast to account for anomalies or ignore them?",
+      "Should the agent apply smoothing before forecasting future values?"
+    ]
+  },
+  {
+    "rule_id": "anomaly_detection",
+    "description": "Anomaly detection requires explicit criteria.",
+    "keywords": ["anomaly", "deviate", "outlier", "significant"],
+    "feedback": [
+      "How should anomalies be defined—z-score, IQR, or manual thresholds?",
+      "Should sudden jumps in values be considered anomalies?",
+      "Do anomalies refer to deviations from the long-term trend or year-to-year changes?",
+      "Should the agent detect outliers numerically or also consider contextual meaning?"
+    ]
+  },
+  {
+    "rule_id": "range_filtering",
+    "description": "Filtering numeric ranges can be ambiguous.",
+    "keywords": ["from <num> to <num>", "between <num> and <num>", "range <num>-<num>"],
+    "feedback": [
+      "Should the year range be inclusive of both endpoints?",
+      "If a year within the range is missing, should it be ignored or treated as zero?",
+      "Do you want the agent to filter strictly by the range or include nearest available years?",
+      "Should bounds like 'greater than' include equality?"
+    ]
+  },
+  {
+    "rule_id": "yes_no_logic",
+    "description": "Binary questions need clarified comparison logic.",
+    "keywords": ["yes or no", "yse/no", "greater than", "compare"],
+    "feedback": [
+      "Should the comparison be based on absolute values or percentages?",
+      "Do you want rounding applied before comparison?",
+      "If values are equal, should the answer default to 'No'?",
+      "Should the comparison ignore missing or incomplete records?"
+    ]
+  },
+  {
+    "rule_id": "advanced_chart_options",
+    "description": "Detailed chart styling requires clarification.",
+    "keywords": ["visualization", "color", "legend", "style", "design"],
+    "feedback": [
+      "Should the chart use specific colors or keep default styling?",
+      "Do you want labels or values displayed directly on bars or points?",
+      "Should the chart emphasize extreme values or all values equally?",
+      "Would you prefer a minimal chart or one with detailed annotations?"
+    ]
+  },
+  {
+    "rule_id": "category_overlap",
+    "description": "Categories such as age groups may overlap or be formatted inconsistently.",
+    "keywords": ["age group", "range", "years", "demographic"],
+    "feedback": [
+      "Some age groups overlap or differ in formatting. Should they be merged?",
+      "Should similar ranges like '35 to 39' and '35–44' be treated as the same group?",
+      "Do you want age ranges normalized to a standard format?",
+      "Should partially overlapping categories be combined or compared separately?"
+    ]
+  },
+  {
+    "rule_id": "percentage_definition",
+    "description": "Percentages may be relative to different bases.",
+    "keywords": ["percentage", "percent", "rate", "ratio"],
+    "feedback": [
+      "Should percentages be computed relative to population or labor force?",
+      "Do you want percentage results rounded or shown precisely?",
+      "Should derived percentages include adjustments for missing values?",
+      "Should the agent output both raw numbers and percentages?"
+    ]
+  },
+  {
+    "rule_id": "multi_year_logic",
+    "description": "Comparisons across years need a consistent rule.",
+    "keywords": ["2022", "2023", "year over year", "compare years"],
+    "feedback": [
+      "Should multi-year values be compared directly or averaged first?",
+      "If a year is missing data, should the agent skip it or estimate it?",
+      "Do you prefer year-over-year difference or percentage change?",
+      "Should the comparison use raw values or normalized values?"
+    ]
+  },
+  {
+    "rule_id": "column_cleaning",
+    "description": "Excel tables may contain multi-row headers or unnamed columns.",
+    "keywords": ["Unnamed", "header", "skiprows", "clean"],
+    "feedback": [
+      "The sheet includes multi-row headers. Should the agent flatten them?",
+      "Do you want unnamed columns removed, renamed, or kept as-is?",
+      "Should column names be standardized before analysis?",
+      "Should the agent infer column names based on content?"
+    ]
+  },
+  {
+    "rule_id": "unit_consistency",
+    "description": "Datasets may mix units such as thousands and millions.",
+    "keywords": ["unit", "thousand", "million", "scale"],
+    "feedback": [
+      "Some columns may use different units. Should values be standardized?",
+      "Do you want the dataset converted entirely to thousands or millions?",
+      "Should the agent detect mixed units and harmonize them?",
+      "Should unit mismatches be flagged or automatically corrected?"
+    ]
+  },
+  {
+    "rule_id": "rounding_precision",
+    "description": "Numeric rounding can influence results.",
+    "keywords": ["round", "decimal", "precision"],
+    "feedback": [
+      "How many decimal places should results be rounded to?",
+      "Do you prefer rounded outputs or full precision values?",
+      "Should rounding occur before or after aggregation?",
+      "Should the agent use financial rounding or standard rounding?"
+    ]
+  },
+  {
+    "rule_id": "filter_condition_logic",
+    "description": "Filtering conditions may be ambiguous.",
+    "keywords": ["greater than", "less than", "above", "below", "threshold"],
+    "feedback": [
+      "Should conditions like 'greater than' include equality?",
+      "If multiple conditions apply, should they be combined with AND or OR?",
+      "Do you want the agent to treat missing comparison values as zero?",
+      "Should threshold filters apply before or after grouping?"
+    ]
+  },
+  {
+    "rule_id": "table_summary",
+    "description": "Summaries may require clarification on detail level.",
+    "keywords": ["summary", "overview", "insight", "main columns"],
+    "feedback": [
+      "Do you want a high-level summary or a detailed statistical description?",
+      "Should the summary highlight only major trends or also minor fluctuations?",
+      "Should the agent include context such as decade-level changes?",
+      "Do you want summaries presented as text or as a small table?"
+    ]
+  },
+  {
+    "rule_id": "column_selection",
+    "description": "Analysis may require choosing between similar columns.",
+    "keywords": ["select column", "choose column", "fields"],
+    "feedback": [
+      "If multiple similar columns exist, which one should be used?",
+      "Should the agent prioritize percentage columns or absolute values?",
+      "Should derived columns be used alongside raw columns?",
+      "Do you want the agent to auto-detect the most relevant field?"
+    ]
+  },
+  {
+    "rule_id": "implicit_calculation",
+    "description": "Some tasks imply intermediate calculations not stated directly.",
+    "keywords": ["calculate", "derive", "estimate"],
+    "feedback": [
+      "This task requires derived values—should the agent compute them automatically?",
+      "Should intermediate steps be shown or only the final result?",
+      "Should the agent create additional helper columns to support the calculation?",
+      "Do you prefer simplified calculations or full step-by-step computation?"
+    ]
+  },
+  {
+    "rule_id": "categorical_encoding",
+    "description": "Categorical variables may need numeric encoding.",
+    "keywords": ["categorical", "encode", "binary", "label encoding"],
+    "feedback": [
+      "Should categorical fields be encoded numerically for analysis?",
+      "Do you want binary encoding or one-hot encoding?",
+      "Should encoded values replace the original text or be added as new columns?",
+      "Should categorical encoding follow alphabetical or frequency order?"
+    ]
+  },
+  {
+    "rule_id": "extremum_lookup",
+    "description": "Tasks that ask for finding the max/min year or a specific value point.",
+    "keywords": [
+        "highest",
+        "lowest",
+        "maximum",
+        "minimum",
+        "peak",
+        "largest",
+        "smallest"
+    ],
+    "feedback": [
+        "Should ties be handled by returning all matching years, or only the earliest one?",
+        "If multiple years share the same extreme value, how should the agent choose which one to report?",
+        "Should the agent break ties using chronology or leave it ambiguous?"
+    ]
+}
+]
